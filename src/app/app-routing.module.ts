@@ -1,10 +1,15 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
-
-const routes: Routes = [];
+import { SynonymComponent } from './synonym/synonym.component';
+import { SimilarComponent } from './similar/similar.component';
+const routes: Routes = [
+  { path: '', redirectTo: '/synonyms', pathMatch: 'full' },
+  { path: 'synonyms', component: SynonymComponent },
+  { path: 'similar', component: SimilarComponent },
+];
 
 @NgModule({
   imports: [RouterModule.forRoot(routes)],
-  exports: [RouterModule]
+  exports: [RouterModule],
 })
-export class AppRoutingModule { }
+export class AppRoutingModule {}

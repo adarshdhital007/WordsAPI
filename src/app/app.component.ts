@@ -1,4 +1,6 @@
 import { Component } from '@angular/core';
+import { ApiService } from './api.service';
+import { Synonym } from 'src/models/Synonym.model';
 
 @Component({
   selector: 'app-root',
@@ -6,5 +8,12 @@ import { Component } from '@angular/core';
   styleUrls: ['./app.component.css']
 })
 export class AppComponent {
-  title = 'BlankApp';
+  word: string = '';
+  synonyms: Synonym[] = [];
+
+  selectedWord: string = '';
+
+  constructor(private apiService: ApiService) {}
+
+  
 }

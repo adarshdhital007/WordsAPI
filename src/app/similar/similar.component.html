@@ -1,0 +1,29 @@
+<div class="app container">
+  <form (ngSubmit)="fetchSimilar()" class="mt-3">
+    <div class="form-group">
+      <label for="word-input">Your Word</label>
+      <input
+        type="text"
+        [(ngModel)]="word"
+        id="word-input"
+        name="word"
+        class="form-control"
+        required
+      />
+    </div>
+    <button type="submit" class="btn btn-primary">Submit</button>
+  </form>
+
+  <div class="mt-4">
+    <h2>Similar Words:</h2>
+    <ul class="list-group">
+      <li
+        *ngFor="let similar of similars"
+        (click)="handleWordClick(similar.word)"
+        class="list-group-item list-group-item-action"
+      >
+        {{ similar.word }}
+      </li>
+    </ul>
+  </div>
+</div>
